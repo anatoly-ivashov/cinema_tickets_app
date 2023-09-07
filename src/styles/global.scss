@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+  justify-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--linkColor);
+}
+
+.hover:hover {
+  cursor: pointer;
+  filter: brightness(120%);
+}

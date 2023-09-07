@@ -1,0 +1,39 @@
+:root {
+  --imgWidth: 350px;
+  --radius: 10px;
+  --padding: 16px;
+}
+
+.MovieCard {
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius);
+  padding: var(--padding);
+  overflow: hidden;
+  color: var(--default);
+}
+
+.imgBlock {
+  height: calc(var(--imgWidth) / 1.5);
+  position: relative;
+  overflow: hidden;
+  margin: calc(var(--padding) * -1);
+  margin-bottom: var(--padding);
+
+  img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.title {
+  margin-top: 12px;
+}
+
+.genre {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--secondary);
+}
