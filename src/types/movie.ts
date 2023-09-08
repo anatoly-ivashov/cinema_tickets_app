@@ -2,6 +2,7 @@ import { Actors } from "./actors"
 import { Country } from "./country"
 
 export interface IMovieCard {
+  id: number
   img: string
   title: string
   genre: string

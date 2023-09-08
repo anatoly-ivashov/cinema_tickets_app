@@ -5,6 +5,7 @@ import { Movie } from '../../types'
 import style from './MoviePage.module.scss'
 
 const data: Movie = {
+  id: 1,
   img: "https://avatars.mds.yandex.net/get-afishanew/23114/1b65ed28-dcdb-40da-b4fd-ef7d35e12cb0/s190x280",
   title: "Паранормальное явление",
   genre: "Драма",
