@@ -1,21 +1,23 @@
 import classNames from 'classnames'
-import { IMovieCard } from '../../types'
+import { Movie } from '../../types'
 import { MovieCard } from '../MovieCard'
 import style from './MovieList.module.scss'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../store'
+import { useGetAllMoviesQuery } from '../../api'
 
 interface MovieListProps {
   className?: string
 }
 
 export const MovieList = ({ className }: MovieListProps) => {
+  const { isLoading, data } = useGetAllMoviesQuery()
   const classes = classNames(style.MovieList, className)
-  const { data } = useSelector((state: RootState) => state.movies)
 
-  function renderList(data: IMovieCard[]) {
-    return data.map((movieData, i) => <MovieCard key={i} data={movieData} />)
+  function renderList(data: Movie[]) {
+    return data.map((movieData) => <MovieCard key={movieData.id} data={movieData} />)
   }
+
+  if (isLoading) return <h1>Loading...</h1>
+  if (!data) return <h1>Нет данных</h1>
 
   return (
     <div className={classes}>{renderList(data)}</div>

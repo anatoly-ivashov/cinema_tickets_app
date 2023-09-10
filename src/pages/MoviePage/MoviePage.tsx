@@ -1,30 +1,25 @@
 import classNames from 'classnames'
 import { Header } from '../../components/Header'
-import { Movie } from '../../types'
-
 import style from './MoviePage.module.scss'
+import { useParams } from 'react-router-dom'
+import { Title } from '../../components/Title'
+import { useGetMovieByIdQuery } from '../../api'
 
-const data: Movie = {
-  id: 1,
-  img: "https://avatars.mds.yandex.net/get-afishanew/23114/1b65ed28-dcdb-40da-b4fd-ef7d35e12cb0/s190x280",
-  title: "Паранормальное явление",
-  genre: "Драма",
-  description: "Четверо блогеров-инфлюэнсеров отправляются в заброшенный дом, где когда-то жили оккультисты. Желая пощекотать нервишки своим зрителям, они обещают провести там ритуал. Но обычный развлекательный стрим превращается в настоящее противостояние с потусторонними силами.",
-  times: ['10:00', '12:30', '15:25', '19:45', '22:00', '23:55'],
-  actors: ['Арнольд Шварцнегер', 'Киану Ривз', 'Дженифер Лопез'],
-  country: 'США',
-  duration: 93,
-  year: 2023,
-  premier: '7 сентября 2023'
-}
 
 export const MoviePage = () => {
+  const params = useParams()
+  const { isLoading, data } = useGetMovieByIdQuery(params.id!)
+  console.log('data', data)
+
   const renderSessionTimes = (times: string[]) => {
     return times.map((time) => {
       const classes = classNames(style.sessionTimeItem, 'hover')
       return <div key={time} className={classes}>{time}</div>
     })
   }
+
+  if (isLoading) return <h1>Загрузка...</h1>
+  if (!data) return <Title center>Фильм не найден</Title>
 
   return (
     <div className={style.MoviePage}>
