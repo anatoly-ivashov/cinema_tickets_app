@@ -1,10 +1,18 @@
 :root {
   /* Colors */
+  --accent: deepskyblue;
   --secondary: #7f8e91;
   --linkColor: #17b6eb;
   --default: #333;
   --light: white;
+  --statusAvailable: var(--accent);
+  --statusBusy: red;
+  --statusSelected: #003c7b;
 
   /* Sizes */
   --margin: 16px;
+
+  /* Seats Map */
+  --seats-gap: 12px;
+  --seats-size: 28px;
 }

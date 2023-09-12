@@ -1,0 +1,12 @@
+.InfoTable {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: calc(var(--margin) / 2) var(--margin);
+  align-content: start;
+
+}
+
+.label {
+  color: var(--secondary);
+  font-weight: 300;
+}
