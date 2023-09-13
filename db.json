@@ -186,7 +186,36 @@
     },
     {
       "id": 4,
-      "buy_seats": []
+      "buy_seats": [
+        {
+          "row": 5,
+          "seat": 5
+        },
+        {
+          "row": 5,
+          "seat": 4
+        },
+        {
+          "row": 4,
+          "seat": 4
+        },
+        {
+          "row": 4,
+          "seat": 5
+        },
+        {
+          "row": 4,
+          "seat": 6
+        },
+        {
+          "row": 5,
+          "seat": 8
+        },
+        {
+          "row": 5,
+          "seat": 7
+        }
+      ]
     },
     {
       "id": 5,

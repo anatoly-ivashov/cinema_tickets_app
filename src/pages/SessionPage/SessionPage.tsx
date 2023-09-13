@@ -14,6 +14,7 @@ import { OrderData } from '../../types'
 import { useEffect, useRef, useState } from 'react'
 
 export const SessionPage = () => {
+  const dispatch = useDispatch()
   const imgRef = useRef<HTMLImageElement>(null)
   const [isDisabled, setIsDisabled] = useState(false);
   const [qrCode, setQrCode] = useState('');
@@ -70,6 +71,10 @@ export const SessionPage = () => {
     ]
   }
 
+  const clearOrderInStore = () => {
+    dispatch(clearOrder())
+  }
+
   const getPriceInfo = (count: number, price: number) => {
     return [
       {
@@ -97,7 +102,7 @@ export const SessionPage = () => {
 
   return (
     <div className={style.SessionPage}>
-      <Header title="Покупка билетов" />
+      <Header title="Покупка билетов" onClick={clearOrderInStore} />
       <div className={style.content}>
         <SeatsSelect buySeats={sessionData?.seat?.buy_seats} />
         <div className={style.info}>
