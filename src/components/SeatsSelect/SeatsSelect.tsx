@@ -1,12 +1,23 @@
 import classNames from 'classnames'
 import style from './SeatsSelect.module.scss'
 import { Seat } from './components/Seat'
+import { Seat as ISeat } from '../../types'
 
-export const SeatsSelect = () => {
+type BuySeats = ISeat[] | undefined
+
+interface SeatsSelectProps {
+  buySeats: BuySeats
+}
+
+export const SeatsSelect = ({ buySeats }: SeatsSelectProps) => {
   let seat = 1
   let row = 1
   let resetNums = [4, 6, 5]
   const emptyCells = [2, 3, 4, 5, 6, 12, 13, 14, 18, 19, 25, 26]
+
+  const isBusySeat = (row: number, seat: number, buySeats: BuySeats) => {
+    return buySeats?.some((buySeat) => buySeat.row === row && buySeat.seat === seat)
+  }
 
   return (
     <div className={style.SeatsSelect}>
@@ -29,25 +40,20 @@ export const SeatsSelect = () => {
             if (emptyCells.includes(i)) {
               return <div key={`${i}-${Math.random()}`} />
             } else {
-              const classes = classNames('ic-seat', {
-                [style.available]: seat !== 3 && seat !== 5,
-                [style.busy]: seat === 3,
-                [style.selected]: seat === 5,
-              })
-              const data = {
+              const seatData = {
                 id: seat,
                 row,
                 seat,
-                status: seat !== 3 ? 'available' : 'busy'
+                status: isBusySeat(row, seat, buySeats) ? 'busy' : 'available'
               }
               if (seat === resetNums[row - 1] || seat === 9) {
                 seat = 1
                 row++
-                data.row = row
+                seatData.row = row
               } else {
                 seat++
               }
-              return <Seat key={`${row}-${seat}`} className={classes} data={data} />
+              return <Seat key={`${row}-${seat}`} data={seatData} />
             }
           })}
         </div>

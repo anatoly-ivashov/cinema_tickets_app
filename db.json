@@ -72,5 +72,194 @@
         "23:00"
       ]
     }
+  ],
+  "sessions": [
+    {
+      "id": 1,
+      "time": "10:00",
+      "movieId": 2,
+      "seatId": 1
+    },
+    {
+      "id": 2,
+      "time": "10:00",
+      "movieId": 1,
+      "seatId": 2
+    },
+    {
+      "id": 3,
+      "time": "12:30",
+      "movieId": 1,
+      "seatId": 3
+    },
+    {
+      "id": 4,
+      "time": "18:00",
+      "movieId": 3,
+      "seatId": 4
+    },
+    {
+      "id": 5,
+      "time": "22:30",
+      "movieId": 3,
+      "seatId": 5
+    }
+  ],
+  "seats": [
+    {
+      "buy_seats": [
+        {
+          "row": 1,
+          "seat": 3
+        },
+        {
+          "row": 4,
+          "seat": 8
+        },
+        {
+          "row": 5,
+          "seat": 5
+        },
+        {
+          "row": 5,
+          "seat": 6
+        },
+        {
+          "row": 5,
+          "seat": 7
+        },
+        {
+          "row": 4,
+          "seat": 4
+        },
+        {
+          "row": 5,
+          "seat": 3
+        },
+        {
+          "row": 5,
+          "seat": 4
+        },
+        {
+          "row": 4,
+          "seat": 5
+        },
+        {
+          "row": 4,
+          "seat": 6
+        },
+        {
+          "row": 4,
+          "seat": 7
+        },
+        {
+          "row": 4,
+          "seat": 5
+        },
+        {
+          "row": 6,
+          "seat": 4
+        },
+        {
+          "row": 6,
+          "seat": 5
+        }
+      ],
+      "id": 1
+    },
+    {
+      "id": 2,
+      "buy_seats": [
+        {
+          "row": 5,
+          "seat": 5
+        },
+        {
+          "row": 5,
+          "seat": 7
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "buy_seats": []
+    },
+    {
+      "id": 4,
+      "buy_seats": []
+    },
+    {
+      "id": 5,
+      "buy_seats": [
+        {
+          "row": 5,
+          "seat": 4
+        },
+        {
+          "row": 5,
+          "seat": 5
+        },
+        {
+          "row": 4,
+          "seat": 5
+        },
+        {
+          "row": 4,
+          "seat": 4
+        },
+        {
+          "row": 4,
+          "seat": 4
+        },
+        {
+          "row": 4,
+          "seat": 6
+        },
+        {
+          "row": 4,
+          "seat": 4
+        },
+        {
+          "row": 4,
+          "seat": 6
+        },
+        {
+          "row": 8,
+          "seat": 9
+        },
+        {
+          "row": 7,
+          "seat": 1
+        },
+        {
+          "row": 7,
+          "seat": 2
+        },
+        {
+          "row": 7,
+          "seat": 3
+        },
+        {
+          "row": 7,
+          "seat": 4
+        },
+        {
+          "row": 7,
+          "seat": 5
+        },
+        {
+          "row": 7,
+          "seat": 6
+        },
+        {
+          "row": 7,
+          "seat": 7
+        },
+        {
+          "row": 7,
+          "seat": 8
+        }
+      ]
+    }
   ]
 }

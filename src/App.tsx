@@ -4,7 +4,7 @@ import { MainPage } from './pages/MainPage'
 import { MoviePage } from './pages/MoviePage'
 import { Provider } from 'react-redux'
 import { store } from './store'
-import { TicketPage } from './pages/TicketPage'
+import { SessionPage } from './pages/SessionPage'
 
 export const App = () => {
   return (
@@ -14,7 +14,7 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/movie/:id" element={<MoviePage />} />
-            <Route path="/buy/:sessionId" element={<TicketPage />} />
+            <Route path="/movie/:movieId/sessions/:sessionId" element={<SessionPage />} />
           </Routes>
         </BrowserRouter>
       </div>

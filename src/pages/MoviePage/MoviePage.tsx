@@ -6,16 +6,17 @@ import { useGetMovieByIdQuery } from '../../api'
 import { SessionTime } from '../../components/SessionTime'
 import { InfoTable } from '../../components/InfoTable'
 import { helpers } from './helpers'
+import { Session } from '../../types'
 
 
 export const MoviePage = () => {
   const params = useParams()
   const { isLoading, data } = useGetMovieByIdQuery(params.id!)
-  console.log('data', data)
 
-  const renderSessionTimes = (times: string[]) => {
-    return times.map((time, i) => {
-      return <SessionTime key={`${i}-${Date.now()}`} id={i} time={time} />
+  const renderSessionTimes = (sessions: Session[]) => {
+    if (!data) return null
+    return sessions.map(({ id, time }) => {
+      return <SessionTime key={id} id={id} movieId={data.id!} time={time} />
     })
   }
 
@@ -39,7 +40,7 @@ export const MoviePage = () => {
           <div className={style.session}>
             <h3 className={style.subtitle}>Сеансы</h3>
             <div className={style.sessionTimesList}>
-              {renderSessionTimes(data.times)}
+              {renderSessionTimes(data.sessions)}
             </div>
           </div>
         </div>

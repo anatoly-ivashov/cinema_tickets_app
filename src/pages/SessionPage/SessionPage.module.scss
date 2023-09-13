@@ -41,3 +41,8 @@
   color: var(--light);
   background-color: var(--accent);
 }
+
+.disable {
+  pointer-events: none;
+  opacity: 0.5;
+}

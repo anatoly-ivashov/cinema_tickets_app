@@ -23,7 +23,7 @@ const orderSlice = createSlice({
     },
     clearOrder: (state) => {
       state.seats = []
-    }
+    },
   }
 })
 

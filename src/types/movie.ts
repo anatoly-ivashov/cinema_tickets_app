@@ -1,5 +1,6 @@
 import { Actors } from "./actors"
 import { Country } from "./country"
+import { Session } from "./session"
 import { Time } from "./times"
 
 export interface IMovieCard {
@@ -17,4 +18,8 @@ export interface Movie extends IMovieCard {
   year: number
   actors: Actors[]
   premier: string
+}
+
+export interface MovieWithSessions extends Movie {
+  sessions: Session[]
 }
